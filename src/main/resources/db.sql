@@ -14,6 +14,8 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 INSERT INTO `role` VALUES (1,'ROLE_USER');
+INSERT INTO `role` VALUES (2,'ROLE_HR');
+INSERT INTO `role` VALUES (3,'ROLE_DOC');
 UNLOCK TABLES;
 
 -- Table structure for table `user`

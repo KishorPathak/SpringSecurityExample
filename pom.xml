@@ -1,7 +1,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.centaurs</groupId>
 	<artifactId>centaurs</artifactId>
@@ -9,7 +9,7 @@
 	<version>RELEASE</version>
 	<name>Centaurs Employee Wellness</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<jdk.version>1.7</jdk.version>
 		<spring.version>4.2.0.RELEASE</spring.version>
@@ -103,9 +103,18 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.4.1.1</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>centaurs</finalName>
 		<plugins>
@@ -120,5 +129,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>

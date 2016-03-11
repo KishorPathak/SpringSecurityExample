@@ -1,6 +1,8 @@
 package com.centaurs.service;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,7 +27,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<Role>(roleRepository.findAll()));
+        List<Role> rolesList = roleRepository.findAll();
+        Set<Role> roleSet = new HashSet<Role>();
+        for (Role role : rolesList) {
+        	role.getName().equals("ROLE_USER");
+        	roleSet.add(role);
+		}
+        user.setRoles(roleSet);
         userRepository.save(user);
     }
 
@@ -33,4 +41,5 @@ public class UserServiceImpl implements UserService {
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
 }
